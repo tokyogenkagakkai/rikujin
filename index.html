@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>六壬</title>
+        <link rel="stylesheet" type="text/css" href="rikujin.css" />
+        <script type="text/javascript" src="rikujin.js"></script>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr><td>月</td><td>
+                    <select id="jikkan"></select>
+                    <select id="junisi"></select>
+                </td><td>月将</td><td><input type="text" id="gessyo" disabled="disabled"></input></td></tr>
+                <tr><td>日</td><td><input type="text"></input></td><td>寄宮</td><td><input type="text"></input></td></tr>
+                <tr><td>時</td><td><input type="text"></input></td><td>空亡</td><td><input type="text"></input></td></tr>
+                <tr><td>中節</td><td><input type="text"></input></td></tr>
+            </table>
+        </form>
+        <div class="left">
+            <div>
+                天盤
+                <div id="tenban-container"></div>
+            </div>
+            <div>
+                地盤
+                <div id="tiban-container"></div>
+            </div>
+        </div>
+        <div class="left">
+            <div>
+                四課
+                <table>
+                    <tr><td>④</td><td>③</td><td>②</td><td>①</td></tr>
+                    <tr><td>④</td><td>③</td><td>②</td><td>①</td></tr>
+                </table>
+            </div>
+            <div>
+                三伝
+                <table>
+                    <tr><td>初伝</td></tr>
+                    <tr><td>中伝</td></tr>
+                    <tr><td>末伝</td></tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
