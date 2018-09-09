@@ -74,7 +74,9 @@ function sigo(aGessi) {
 // 日干に対して寄宮を計算する
 // 日干は index ではなく文字で指定する
 function calcYorimiya(aNikkan) {
-    return aNikkan;
+    var yorimiyas = '寅辰巳未巳未申戌亥丑';
+    var index = jikkan.indexOf(aNikkan);
+    return yorimiyas[index];
 }
 
 function makeKansi(aId) {
