@@ -32,19 +32,30 @@ window.addEventListener('load', function () {
     makeBan('tenban', 'tenban-container');
     setBan('tenban', junisi);
 
-    setOptions('jikkan', jikkan);
-    setOptions('junisi', junisi);
+    setOptions('gekkan', jikkan);
+    setOptions('gessi', junisi);
 
-    var j = document.getElementById('junisi');
-    j.addEventListener('change', function (e) {
+    setOptions('nikkan', jikkan);
+    setOptions('nissi', junisi);
+
+    document.getElementById('nikkan').addEventListener('change',
+    function (e) {
+        var selected = e.target.value;
+        var yorimiya = document.getElementById('yorimiya');
+        yorimiya.value = calcYorimiya(selected);
+    }, false);
+
+    document.getElementById('gessi').addEventListener('change',
+    function (e) {
         var selected = e.target.value;
         var gessyo = document.getElementById('gessyo');
         gessyo.value = sigo(selected);
     }, false);
 }, false);
-// 支に対して支合を計算する
-// 支は index ではなく文字で指定する
-function sigo(aSi) {
+
+// 月支に対して支合を計算する
+// 月支は index ではなく文字で指定する
+function sigo(aGessi) {
     var pairs = [
         '子丑', '辰酉',
         '亥寅', '申巳',
@@ -52,7 +63,7 @@ function sigo(aSi) {
     ];
     var found = -1;
     for (var pair of pairs) {
-        var index = pair.indexOf(aSi);
+        var index = pair.indexOf(aGessi);
         if (index == -1) {
             continue;
         }
@@ -62,4 +73,10 @@ function sigo(aSi) {
         return pair.charAt(selection);
     }
     return null;
+}
+
+// 日干に対して寄宮を計算する
+// 日干は index ではなく文字で指定する
+function calcYorimiya(aNikkan) {
+    return aNikkan;
 }
