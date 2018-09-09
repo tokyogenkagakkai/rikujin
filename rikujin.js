@@ -16,11 +16,10 @@ function makeBan(aId, aInto) {
     document.getElementById(aInto).innerHTML = html;
 }
 function setOptions(aSelect, aOptions) {
-    var select = document.getElementById(aSelect);
     for (var i = 0; i < aOptions.length; ++i) {
         var option = document.createElement('option');
         option.innerHTML = aOptions.charAt(i);
-        select.appendChild(option);
+        aSelect.appendChild(option);
     }
 }
 var jikkan = '甲乙丙丁戊己庚辛壬癸';
@@ -32,20 +31,17 @@ window.addEventListener('load', function () {
     makeBan('tenban', 'tenban-container');
     setBan('tenban', junisi);
 
-    setOptions('gekkan', jikkan);
-    setOptions('gessi', junisi);
+    makeKansi('getu');
+    makeKansi('niti');
 
-    setOptions('nikkan', jikkan);
-    setOptions('nissi', junisi);
-
-    document.getElementById('nikkan').addEventListener('change',
+    document.querySelector('#niti .kan').addEventListener('change',
     function (e) {
         var selected = e.target.value;
         var yorimiya = document.getElementById('yorimiya');
         yorimiya.value = calcYorimiya(selected);
     }, false);
 
-    document.getElementById('gessi').addEventListener('change',
+    document.querySelector('#getu .si').addEventListener('change',
     function (e) {
         var selected = e.target.value;
         var gessyo = document.getElementById('gessyo');
@@ -79,4 +75,16 @@ function sigo(aGessi) {
 // 日干は index ではなく文字で指定する
 function calcYorimiya(aNikkan) {
     return aNikkan;
+}
+
+function makeKansi(aId) {
+    var div = document.getElementById(aId);
+    div.innerHTML = `
+    <select class="kan"></select>
+    <select class="si"></select>
+    `;
+    var kan = div.querySelector('.kan');
+    var si = div.querySelector('.si');
+    setOptions(kan, jikkan);
+    setOptions(si, junisi);
 }
