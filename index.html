@@ -10,18 +10,48 @@
             <table>
                 <tr><td>月</td><td><div id="getu"></div></td><td>月将</td><td><input type="text" id="gessyo" disabled="disabled"></input></td></tr>
                 <tr><td>日</td><td><div id="niti"></div></td><td>寄宮</td><td><input type="text" id="yorimiya" disabled="disabled"></input></td></tr>
-                <tr><td>時</td><td><input type="text"></input></td><td>空亡</td><td><input type="text"></input></td></tr>
+                <tr><td>時</td><td><input type="time"></input></td><td>空亡</td><td><input type="text" id="kuubou" disabled="disabled"></input></td></tr>
                 <tr><td>中節</td><td><input type="text"></input></td></tr>
             </table>
         </form>
         <div class="left">
             <div>
                 天盤
-                <div id="tenban-container"></div>
+                <table id="tenban">
+                    <tr>
+                        <td><div class="c5"></div><div class="d5"></div></td>
+                        <td><div class="c6"></div><div class="d6"></div></td>
+                        <td><div class="c7"></div><div class="d7"></div></td>
+                        <td><div class="c8"></div><div class="d8"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="c4"></div><div class="d4"></div></td>
+                        <td colspan="2" rowspan="2"></td>
+
+                        <td><div class="c9"></div><div class="d9"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="c3"></div><div class="d3"></div></td>
+
+
+                        <td><div class="c10"></div><div class="d10"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="c2"></div><div class="d2"></div></td>
+                        <td><div class="c1"></div><div class="d1"></div></td>
+                        <td><div class="c0"></div><div class="d0"></div></td>
+                        <td><div class="c11"></div><div class="d11"></div></td>
+                    </tr>
+                </table>
             </div>
             <div>
                 地盤
-                <div id="tiban-container"></div>
+                <table id="tiban">
+                    <tr><td class="c5"></td><td class="c6"></td><td class="c7"></td><td class="c8"></td></tr>
+                    <tr><td class="c4"></td>       <td colspan="2" rowspan="2"></td><td class="c9"></td></tr>
+                    <tr><td class="c3"></td>                                        <td class="c10"></td></tr>
+                    <tr><td class="c2"></td><td class="c1"></td><td class="c0"></td><td class="c11"></td></tr>
+                </table>
             </div>
         </div>
         <div class="left">

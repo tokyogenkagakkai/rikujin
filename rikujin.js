@@ -1,19 +1,9 @@
-function setBan(aId, aItems) {
+function setBan(aId, aLetter, aItems) {
     var table = document.getElementById(aId);
     for (var i = 0; i < aItems.length; ++i) {
-        var cell = table.querySelector('.c' + i);
+        var cell = table.querySelector('.' + aLetter + i);
         cell.innerHTML = aItems.charAt(i);
     }
-}
-function makeBan(aId, aInto) {
-    var html = `
-    <table id="${aId}">
-        <tr><td class="c5"></td><td class="c6"></td><td class="c7"></td><td class="c8"></td></tr>
-        <tr><td class="c4"></td>       <td colspan="2" rowspan="2"></td><td class="c9"></td></tr>
-        <tr><td class="c3"></td>                                        <td class="c10"></td></tr>
-        <tr><td class="c2"></td><td class="c1"></td><td class="c0"></td><td class="c11"></td></tr>
-    </table>`;
-    document.getElementById(aInto).innerHTML = html;
 }
 function setOptions(aSelect, aOptions) {
     for (var i = 0; i < aOptions.length; ++i) {
@@ -25,11 +15,9 @@ function setOptions(aSelect, aOptions) {
 var jikkan = '甲乙丙丁戊己庚辛壬癸';
 var junisi = '子丑寅卯辰巳午未申酉戌亥';
 window.addEventListener('load', function () {
-    makeBan('tiban', 'tiban-container');
-    setBan('tiban', junisi);
-
-    makeBan('tenban', 'tenban-container');
-    setBan('tenban', junisi);
+    setBan('tenban', 'c', junisi);
+    setBan('tenban', 'd', junisi);
+    setBan('tiban', 'c', junisi);
 
     makeKansi('getu');
     makeKansi('niti');

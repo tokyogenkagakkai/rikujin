@@ -11,3 +11,32 @@
     font-size: 2em;
     margin-right: 2em;
 }
+#tenban {
+    font-size: 0.5em;
+}
+#tenban td {
+    text-align: center;
+    width: 2.6em;
+}
+#tenban td div {
+    display: inline;
+    padding: 0 0.1em;
+    line-height: 3.5em;
+}
+#tenban tr:first-child td div,
+#tenban tr:last-child td div {
+    display: block;
+    line-height: 1.6em;
+}
+#tenban tr:first-child td:first-child div:first-child,
+#tenban tr:first-child td:last-child div:last-child,
+#tenban tr:last-child td:first-child div:last-child,
+#tenban tr:last-child td:last-child div:first-child {
+    text-align: left;
+}
+#tenban tr:first-child td:first-child div:last-child,
+#tenban tr:first-child td:last-child div:first-child,
+#tenban tr:last-child td:first-child div:first-child,
+#tenban tr:last-child td:last-child div:last-child {
+    text-align: right;
+}
